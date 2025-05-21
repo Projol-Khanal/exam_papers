@@ -8,34 +8,32 @@ ABCDCBA
 */
 
 
-#include <stdio.h>
 
-int main() 
+#include<stdio.h>
+int main()
 {
-    int n = 4; 
-    
-    for (int i = 0; i < n; i++) 
+    int i, j;
+    char k;
+    for(i = 1; i <= 4; i++)  // 4 rows
     {
-        // Print spaces
-        for (int j = 0; j < n - i - 1; j++) 
+        k='A';
+        
+        for(j = 1; j <= 7; j++)  // 7 columns
         {
-            printf(" ");
+            if(j >= 5-i && j <= 3+i)  // Between these columns
+            {
+                printf("%c",k);
+                if(j < 4)   // Before the center
+                    k++;
+                else        // After the center
+                    k--;
+            }
+            else
+            {
+                printf(" ");
+            }
         }
-
-        // Print letters from A up to the current letter
-        for (int j = 0; j <= i; j++) 
-        {
-            printf("%c", 'A' + j);
-        }
-
-        // Print letters from the current letter back to A
-        for (int j = i - 1; j >= 0; j--) 
-        {
-            printf("%c", 'A' + j);
-        }
-
         printf("\n");
     }
-
     return 0;
 }

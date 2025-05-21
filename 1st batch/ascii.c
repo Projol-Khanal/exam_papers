@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int main() {
-    char str[100];
+    char str[20];
     int i = 0;
 
     

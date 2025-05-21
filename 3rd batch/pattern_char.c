@@ -7,26 +7,27 @@ P     P
 #include<stdio.h>
 int main()
 {
-   int i,j,k;
-   for(i=0;i<=3;i++)
+   int i, j;
+   char k;
+   for(i = 1; i <= 4; i++)  
    {
-    for(j=80;j<=83-i;j++)
-    {
-        printf("%c",j);
-    }
-    for(int sp=1;sp<=i*2-1;sp++)
-    {
-        printf(" ");
-    }
-    for(k=83-i;k>=80;k--)
-    {
-        if(k==83);
-        else
-        printf("%c",k);
-    }
+      k = 'P';
+      for(j = 1; j <= 7; j++)  
+      {
+         if(j <= 5-i || j >= 3+i)
+         {
+            printf("%c", k);
+            j<4?k++:k--;
 
-
-    printf("\n");
+         }
+         else
+         {
+            printf(" ");
+            if(j == 4) // Important: in middle, skip increment/decrement after space
+            k--;
+         }
+      }
+      printf("\n");
    }
-
-}   
+   return 0;
+}
